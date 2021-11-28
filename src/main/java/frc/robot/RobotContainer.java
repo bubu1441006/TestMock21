@@ -10,14 +10,12 @@ import edu.wpi.first.wpilibj.XboxController;
 
 import static frc.robot.Constants.JOYSTICK.*;
 
-import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.DriveStraight;
 import frc.robot.commands.OpenToSuck;
 import frc.robot.commands.Auto;
 
 import frc.robot.subsystems.BallSucker;
 import frc.robot.subsystems.DriveBase;
-import frc.robot.subsystems.ExampleSubsystem;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;

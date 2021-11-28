@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.BallShooter;
 import frc.robot.subsystems.BallSucker;
+import frc.robot.commands.RotateToAngle;
 
 import static frc.robot.Constants.AUTO_CONSTANTS.*;
 
@@ -22,8 +23,8 @@ public class Auto extends ParallelCommandGroup {
       
     new OpenToSuck(ballSucker, SUCK_STRENGTH).withTimeout(SUCK_TIME_OUT), 
     new Shoot(ballShooter, SHOOT_STRENGTH),
-    new DriveStraight(driveBase, SPEED1, SPEED2)
-    
+    new DriveStraight(driveBase, SPEED1, SPEED2),
+    new RotateToAngle(driveBase, 180)
     );
   }
 }

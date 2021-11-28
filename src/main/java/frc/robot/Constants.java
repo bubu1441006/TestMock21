@@ -41,4 +41,14 @@ public final class Constants {
         public static final double SPEED2 = 0.8;
     }
 
+    public static final class PID {
+        public static final double kP = 0;
+        public static final double kI = 0;
+        public static final double kD = 0;
+
+        public static final double kToleranceDegrees = 2.0f;
+        public static final double kToleranceAngularVelocity = 0.08;
+        
+    }
+
 }

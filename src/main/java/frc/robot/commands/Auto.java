@@ -7,6 +7,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
 import frc.robot.subsystems.DriveBase;
+import frc.robot.subsystems.BallShooter;
 import frc.robot.subsystems.BallSucker;
 
 import static frc.robot.Constants.AUTO_CONSTANTS.*;
@@ -15,11 +16,12 @@ import static frc.robot.Constants.AUTO_CONSTANTS.*;
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class Auto extends SequentialCommandGroup {
-  public Auto(BallSucker ballSucker, DriveBase driveBase) {
+  public Auto(BallSucker ballSucker, BallShooter ballShooter, DriveBase driveBase) {
 
     addCommands(
       
-    new OpenToSuck(ballSucker, SUCK_STRENGTH).withTimeout(TIME_OUT), 
+    new OpenToSuck(ballSucker, SUCK_STRENGTH).withTimeout(SUCK_TIME_OUT), 
+    new Shoot(ballShooter, SHOOT_STRENGTH),
     new DriveStraight(driveBase, SPEED1, SPEED2)
     
     );

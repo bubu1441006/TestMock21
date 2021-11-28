@@ -12,8 +12,9 @@ import static frc.robot.Constants.JOYSTICK.*;
 
 import frc.robot.commands.DriveStraight;
 import frc.robot.commands.OpenToSuck;
+import frc.robot.commands.Shoot;
 import frc.robot.commands.Auto;
-
+import frc.robot.subsystems.BallShooter;
 import frc.robot.subsystems.BallSucker;
 import frc.robot.subsystems.DriveBase;
 
@@ -32,10 +33,12 @@ public class RobotContainer {
 
   private final DriveBase driveBase = new DriveBase();
   private final BallSucker ballSucker = new BallSucker();
-
-  Command driveStraightCommand = new DriveStraight(driveBase, 0.8, 0.8); // 0.8 la cong suat cua dong co
+  private final BallShooter ballShooter = new BallShooter();
+  
+  Command driveStraightCommand = new DriveStraight(driveBase, 0.8, 0.8);
   Command openToSuck = new OpenToSuck(ballSucker, 0.8);
-  Command autoCommand = new Auto(ballSucker, driveBase);
+  Command shoot = new Shoot(ballShooter, 0.8);
+  Command autoCommand = new Auto(ballSucker, ballShooter, driveBase);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

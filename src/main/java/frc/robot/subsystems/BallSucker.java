@@ -14,7 +14,6 @@ public class BallSucker extends SubsystemBase {
 
   public WPI_TalonSRX sucker = new WPI_TalonSRX(SUCKER_ID);
 
-  /** Creates a new BallSucker. */
   public BallSucker() {}
 
   public void suck(double speed) {
@@ -24,6 +23,6 @@ public class BallSucker extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+  
   }
 }

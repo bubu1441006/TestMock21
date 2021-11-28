@@ -46,8 +46,6 @@ public class DriveBase extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
-
     // go faster when press button 2 on joystick
     double boost = RobotContainer.joystick.getRawButton(BUTTON_X) ? BOOST : NORMAL;
     

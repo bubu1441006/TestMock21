@@ -30,7 +30,6 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
  */
 public class RobotContainer {
 
-  // a joystick
   public static final Joystick joystick = new Joystick(JOYSTICK_ID);
 
   private final DriveBase driveBase = new DriveBase();

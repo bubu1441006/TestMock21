@@ -28,4 +28,11 @@ public final class Constants {
         public static final int BUTTON_X = 4;
         public static final int JOYSTICK_BUTTON = 1;
     }
+
+    public static final class AUTO_CONSTANTS {
+        public static final double SUCK_STRENGTH = 0.8;
+        public static final double TIME_OUT = 0.5;
+        public static final double SPEED1 = 0.8;
+        public static final double SPEED2 = 0.8;
+    }
 }

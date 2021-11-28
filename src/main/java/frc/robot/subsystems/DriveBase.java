@@ -49,7 +49,7 @@ public class DriveBase extends SubsystemBase {
     // This method will be called once per scheduler run
 
     // go faster when press button 2 on joystick
-    double boost = RobotContainer.joystick.getRawButton(BUTTON_X) ? 0.8 : 0.4;
+    double boost = RobotContainer.joystick.getRawButton(BUTTON_X) ? BOOST : NORMAL;
     
     drive(RobotContainer.joystick.getRawAxis(1) + boost, 
           RobotContainer.joystick.getRawAxis(3) + boost);

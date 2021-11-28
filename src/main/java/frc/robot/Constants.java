@@ -21,6 +21,9 @@ public final class Constants {
         public static final int LEFTFOLLOW_ID = 4;
 
         public static final int SUCKER_ID = 5;
+
+        public static final double BOOST = 0.8;
+        public static final double NORMAL = 0.4;
     }
 
     public static final class JOYSTICK {
@@ -35,4 +38,5 @@ public final class Constants {
         public static final double SPEED1 = 0.8;
         public static final double SPEED2 = 0.8;
     }
+
 }

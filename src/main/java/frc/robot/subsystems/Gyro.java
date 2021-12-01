@@ -30,15 +30,15 @@ public class Gyro extends SubsystemBase {
     ahrs.reset();
   }
 
+  // Yaw là xoay 
   public double getYaw() {
     return ahrs.getYaw();
   }
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    // đưa giá trị tọa độ x, y lên app SmartDashboard
     SmartDashboard.putNumber("x", ahrs.getDisplacementX());
     SmartDashboard.putNumber("y", ahrs.getDisplacementY());
-    
   }
 }

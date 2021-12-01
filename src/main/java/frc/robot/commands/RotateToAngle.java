@@ -44,8 +44,8 @@ public class RotateToAngle extends CommandBase {
     SmartDashboard.putBoolean("start", true);
     SmartDashboard.putNumber("angle", m_gyro.getYaw());
     double speed = turnController.calculate(m_gyro.getYaw());
-    speed += Math.signum(speed) * 0.1;
-    speed = Math.min(0.6, Math.max(-0.6, speed));
+    speed += Math.signum(speed) * 0.1; // signum -> trả về 1, 0, -1 tương ứng với dấu của speed
+    speed = Math.min(0.6, Math.max(-0.6, speed)); // speed phải trong khoảng [-0.6, 0.6]
     m_DriveBase.drive(-speed, speed);
   }
 
@@ -53,6 +53,7 @@ public class RotateToAngle extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     m_DriveBase.drive(0, 0);
+    SmartDashboard.putBoolean("Start", false); // khi bot dừng lại -> gắn giá trị trên dashboard thành false
   }
 
   // Returns true when the command should end.
@@ -61,3 +62,10 @@ public class RotateToAngle extends CommandBase {
     return turnController.atSetpoint();
   }
 }
+
+/*
+⇒ Công dụng cả file: 
+đưa vào góc quay, 
+ước lượng liên tục tốc độ quay, 
+khi nào sai số nhỏ hơn phạm vi kTolerance thì hàm isFinished trả về True → bot dừng
+*/

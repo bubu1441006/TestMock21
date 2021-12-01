@@ -42,12 +42,13 @@ public final class Constants {
     }
 
     public static final class PID {
+        // cần test thực nghiệm
         public static final double kP = 0;
         public static final double kI = 0;
         public static final double kD = 0;
 
-        public static final double kToleranceDegrees = 2.0f;
-        public static final double kToleranceAngularVelocity = 0.08;
+        public static final double kToleranceDegrees = 2.0f; // phạm vi sai số của góc
+        public static final double kToleranceAngularVelocity = 0.08; // phạm vi sai số của vận tốc góc(vận tốc quay)
         
     }
 
